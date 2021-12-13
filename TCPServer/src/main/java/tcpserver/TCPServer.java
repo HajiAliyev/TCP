@@ -46,7 +46,7 @@ public class TCPServer {
 //            Qarsi terefden requesti aldim. Men buna response gondermek lazimdir. 
             OutputStream outputStream = connectionSocket.getOutputStream();
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
-            String fileName = "dog.jpg";
+            String fileName = "Lutfizade.jpg";
             byte[] bytes = FileUtility.readBytes(fileName);
 //            byte[] bytes = "Test message".getBytes();
 //            dataOutputStream.writeInt(bytes.length);
