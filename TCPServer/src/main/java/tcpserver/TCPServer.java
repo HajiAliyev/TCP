@@ -5,16 +5,13 @@
  */
 package tcpserver;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.*;
-import java.nio.ByteBuffer;
 import lombok.SneakyThrows;
 import util.FileUtility;
 
@@ -61,10 +58,10 @@ public class TCPServer {
     }
     //metni yazmaq ucun
     public static void writeImageResponse(OutputStream out, byte [] s) throws Throwable { 
-        String response = "HTTP/1.1 200 OK\r\n"
+        String response = "HTTP/1.1 200 OK\r\n" //http-nin versiyasi lazimdir. 
                 + "Server: YarServer/2009-09-09\r\n"
-                + "Content-Type: image/jpg\r\n"
-                + "Content-Length: " + s.length + "\r\n"
+                + "Content-Type: image/jpg\r\n" //hansi tip fayl olmasi.
+                + "Content-Length: " + s.length + "\r\n" 
                 + "Connection: close\r\n\r\n";
         String result = response + s;
         out.write(result.getBytes());
